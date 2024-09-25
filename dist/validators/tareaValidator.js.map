@@ -1,0 +1,1 @@
+{"version":3,"file":"tareaValidator.js","sourceRoot":"","sources":["../../src/validators/tareaValidator.ts"],"names":[],"mappings":";;;;;;AAAA,8CAAsB;AAET,QAAA,gBAAgB,GAAG,aAAG,CAAC,MAAM,CAAC;IACzC,YAAY,EAAE,aAAG,CAAC,MAAM,EAAE,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,QAAQ,EAAE;IAC5C,iBAAiB,EAAE,aAAG,CAAC,MAAM,EAAE,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,QAAQ,EAAE;CAClD,CAAC,CAAC"}

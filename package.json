@@ -9,7 +9,7 @@
     "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Erick Cifuentes",
   "license": "ISC",
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
