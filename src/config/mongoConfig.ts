@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const mongoURI = 'mongodb://127.0.0.1:27017/logs'; // Cambia esto a tu URI de MongoDB
+const mongoURI = 'mongodb://127.0.0.1:27017/logs';
 
 const connectMongo = async () => {
   try {

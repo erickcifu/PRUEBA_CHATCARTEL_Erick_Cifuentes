@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 import { logAction } from '../services/logService';
 import { validateUser, validateCreate } from '../validators/userValidator'; // Importa el validador
 
-const JWT_SECRET = 'your_jwt_secret'; // Debes reemplazarlo con una variable de entorno en producción
+const JWT_SECRET = 'your_jwt_secret'; 
 
 // Registro de usuario
 export const register = async (req: Request, res: Response) => {
@@ -61,7 +61,7 @@ export const login = async (req: Request, res: Response) => {
     const userRepository = AppDataSource.getRepository(User);
     const user = await userRepository.findOne({
       where: { correo },
-      relations: ['roles'], // Incluir los roles en la consulta
+      relations: ['roles'], 
     });
 
     if (!user) {
@@ -93,7 +93,7 @@ export const getUserById = async (req: Request, res: Response) => {
   try {
     const userRepository = AppDataSource.getRepository(User);
     const user = await userRepository.findOne({
-      where: { idUser: userId }, // Asegúrate de que la columna en la base de datos sea 'idUser'
+      where: { idUser: userId }, 
     });
     
 
@@ -111,9 +111,9 @@ export const getUserById = async (req: Request, res: Response) => {
 
 //Actualizar usuario
 export const updateUser = async (req: Request, res: Response) => {
-  const userId = parseInt(req.params.idUser); //Id del usuario que se va a actualizar
-  const userData = req.body; // Los nuevos datos para actualizar
-  const loggedInUser = req.user; // El usuario que está autenticado
+  const userId = parseInt(req.params.idUser); 
+  const userData = req.body;
+  const loggedInUser = req.user; 
 
   const { error } = validateUser(userData);
   if (error) {
@@ -129,7 +129,7 @@ export const updateUser = async (req: Request, res: Response) => {
     // Buscar al usuario por ID
     const user = await userRepository.findOne({
       where: { idUser: userId },
-      relations: ['roles'] // Si necesitas las relaciones
+      relations: ['roles'] 
     });
 
     if (!user) {
@@ -137,12 +137,12 @@ export const updateUser = async (req: Request, res: Response) => {
     }
 
     // Actualizar los campos deseados
-    user.correo = userData.correo || user.correo; // Solo actualiza si se proporciona
-    user.pass = userData.pass || user.pass; // Aplica la misma lógica si es necesario
+    user.correo = userData.correo || user.correo;
+    user.pass = userData.pass || user.pass; 
 
     //Encriptar la contraseña
     if (userData.pass) {
-      const salt = await bcrypt.genSalt(10); // Salt genera un numero aleatorio que se agrega a la contraseña antes de hashearla3
+      const salt = await bcrypt.genSalt(10);
 
       user.pass = await bcrypt.hash(userData.pass, salt); // Encriptar la nueva contraseña
     }
@@ -162,8 +162,8 @@ export const updateUser = async (req: Request, res: Response) => {
 
 //ELIMINAR USUARIOS
 export const deleteUser = async (req: Request, res: Response) => {
-  const userId = parseInt(req.params.idUser); // ID del usuario que se quiere eliminar
-  const loggedInUser = req.user; // El usuario que está autenticado
+  const userId = parseInt(req.params.idUser); // 
+  const loggedInUser = req.user;
   try {
     const userRepository = AppDataSource.getRepository(User);
     
@@ -184,39 +184,4 @@ export const deleteUser = async (req: Request, res: Response) => {
     console.error("Error al eliminar el usuario:", error);
     return res.status(500).json({ message: 'Error al eliminar el usuario' });
   }
-};
-
-//   // Verificar si el usuario ya existe
-//   const existeUsuario = findUserByEmail(correo);
-//   if (existeUsuario) {
-//     return res.status(400).json({ message: 'Usuario ya registrado' });
-//   }
-
-//   // Crear nuevo usuario
-//   const user = await createUser(correo, pass, estado_user);
-//   return res.status(201).json({ message: 'Usuario registrado', user, estado_user });
-// };
-
-// // Inicio de sesión (login)
-// export const login = async (req: Request, res: Response) => {
-//   const { correo, pass } = req.body;
-
-//   // Verificar si el usuario existe
-//   const user = findUserByEmail(correo);
-//   if (!user) {
-//     return res.status(400).json({ message: 'Credenciales inválidas' });
-//   }
-
-//   // Validar contraseña
-//   const isValidPassword = await validatePassword(pass, user.pass);
-//   if (!isValidPassword) {
-//     return res.status(400).json({ message: 'Credenciales inválidas' });
-//   }
-
-//   // Crear token JWT
-//   const token = jwt.sign({ userId: user.id, email: user.correo }, JWT_SECRET, {
-//     expiresIn: '1h',
-//   });
-
-//   return res.status(200).json({ message: 'Inicio de sesión exitoso', token });
-// };
+}

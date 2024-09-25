@@ -4,7 +4,7 @@ declare global {
   namespace Express {
     interface Request {
       user?: { userId: number; };
-      //user?: User;  // Aquí agregamos la propiedad user de tipo User
+
     }
   }
 }

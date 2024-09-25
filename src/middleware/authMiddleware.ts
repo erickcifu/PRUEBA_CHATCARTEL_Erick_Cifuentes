@@ -41,8 +41,8 @@ export const authorizeUserOrAdmin = async (req: Request, res: Response, next: Ne
     
     // Obtener al usuario autenticado con sus roles
     const user = await userRepository.findOne({
-      where: { idUser: loggedInUser.userId }, // Comparar correctamente el campo del token con la DB
-      relations: ['roles']  // Cargar los roles asociados al usuario
+      where: { idUser: loggedInUser.userId },
+      relations: ['roles']  
     });
 
     // Debug: Verificar qué usuario y roles se están obteniendo
@@ -59,7 +59,7 @@ export const authorizeUserOrAdmin = async (req: Request, res: Response, next: Ne
     // Verificar si el usuario es el dueño de la información o si es administrador
     if (loggedInUser.userId === userIdFromParams || isAdmin) {
       console.log("Permiso concedido");
-      next();  // El usuario tiene permiso para continuar
+      next();  
     } else {
       return res.status(403).json({ message: 'No tienes permisos para acceder a esta información' });
     }
@@ -71,7 +71,7 @@ export const authorizeUserOrAdmin = async (req: Request, res: Response, next: Ne
 
 //Autorización solo para admin
 export const onlyAdmin = async (req: Request, res: Response, next: NextFunction) => {
-  const loggedInUser = req.user; // El usuario autenticado del JWT
+  const loggedInUser = req.user; 
 
   if (!loggedInUser) {
     return res.status(401).json({ message: 'Usuario no autenticado' });

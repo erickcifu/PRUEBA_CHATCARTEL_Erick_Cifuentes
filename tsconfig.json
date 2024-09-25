@@ -2,8 +2,8 @@
     "compilerOptions": {
       "module": "commonjs",
       "esModuleInterop": true,
-      "experimentalDecorators": true,  // Habilitar decoradores
-      "emitDecoratorMetadata": true,   // Habilitar metadatos de decoradores
+      "experimentalDecorators": true,  
+      "emitDecoratorMetadata": true,   
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
       "target": "es6",
