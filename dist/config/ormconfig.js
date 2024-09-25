@@ -11,7 +11,7 @@ exports.AppDataSource = new typeorm_1.DataSource({
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: '', // Cambia esta contraseña por la correcta
+    password: '',
     database: 'ProyectoDB',
     synchronize: false, // Para desarrollo, en producción debe ser false
     logging: true,

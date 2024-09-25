@@ -32,12 +32,4 @@ const logSchema = new mongoose_1.Schema({
 });
 const LogModel = mongoose_1.default.model('Log', logSchema);
 exports.default = LogModel;
-// import mongoose from 'mongoose';
-// const logSchema = new mongoose.Schema({
-//   action: { type: String, enum: ['CREATE', 'UPDATE', 'DELETE'], required: true },
-//   resource: { type: String, enum: ['USER', 'PROJECT', 'TASK'], required: true },
-//   timestamp: { type: Date, default: Date.now },
-// });
-// const Log = mongoose.model('Log', logSchema);
-// export default Log;
 //# sourceMappingURL=logs.js.map
