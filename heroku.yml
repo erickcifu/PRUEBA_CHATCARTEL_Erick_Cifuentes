@@ -1,0 +1,6 @@
+build:
+  docker:
+    web: Dockerfile  # Se indica que Heroku debe usar el Dockerfile para construir la imagen.
+
+run:
+  web: npm start  # O el comando que uses para iniciar tu aplicación.
