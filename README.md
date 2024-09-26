@@ -6,9 +6,9 @@ Una API RESTful construida con Node.js, Express y TypeScript. Esta API está dis
 
 
 
-# API de Gestión de Usuarios
+# API REST de Gestión de Usuarios para proyectos y tareas
 
-Esta API permite la gestión de usuarios, incluyendo el registro, inicio de sesión y la obtención de información de un usuario específico. Está construida sobre Node.js y utiliza TypeScript y TypeORM.
+Esta API permite la gestión de usuarios, incluyendo el registro, inicio de sesión y la obtención de información de un usuario específico y la creacion de proyectos y asignacion de tareas a los usuarios. Está construida sobre Node.js y utiliza TypeScript y TypeORM.
 
 ## Endpoints
 
@@ -117,7 +117,9 @@ Código 500 - Error en el servidor: Error interno.
   "error": "Error en el servidor."
 }
 ~~~~
-### Notas
+
+## Notas
+
 Asegúrate de que la API esté corriendo en http://localhost:3000 antes de realizar las peticiones.
 Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y seguir las mejores prácticas de seguridad.
 
@@ -127,8 +129,9 @@ Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y segu
 
 
 
+## Para poder acceder al servidor a través del siguiente enlace:
 
-## https://pruebaerick-b12ed88da879.herokuapp.com//auth/login 
+### https://pruebaerick-b12ed88da879.herokuapp.com
 
 
 
