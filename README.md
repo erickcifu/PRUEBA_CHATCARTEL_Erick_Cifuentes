@@ -28,7 +28,7 @@ Esta API permite la gestión de usuarios, incluyendo el registro, inicio de sesi
 
 #### Response
 
-- **Código 201 - Created:** Usuario creado exitosamente.
+**Código 201 - Created:** Usuario creado exitosamente.
   
   ```json
   {
