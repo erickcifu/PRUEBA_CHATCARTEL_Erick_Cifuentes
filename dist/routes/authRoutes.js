@@ -6,35 +6,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const authController_1 = require("../controllers/authController");
 const authMiddleware_1 = require("../middleware/authMiddleware");
-const tareaController_1 = require("../controllers/tareaController");
 const proyectoController_1 = require("../controllers/proyectoController");
 const router = express_1.default.Router();
-// Ruta para registrar usuario
-router.post('/users', authController_1.register);
-// Ruta para login de usuario
-router.post('/auth/login', authController_1.login);
-// Buscar un usuario por ID
-router.get('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.authorizeUserOrAdmin, authController_1.getUserById);
-//Actualizar usuario
-router.put('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.authorizeUserOrAdmin, authController_1.updateUser);
-//Eliminar usuario
-router.delete('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.onlyAdmin, authController_1.deleteUser);
+//USUARIOS
+router.post('/users', authController_1.register); // Registrar usuarios
+router.post('/auth/login', authController_1.login); // Login de usuario
+router.get('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.authorizeUserOrAdmin, authController_1.getUserById); // Buscar un usuario por ID
+router.put('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.authorizeUserOrAdmin, authController_1.updateUser); //Actualizar usuario
+router.delete('/users/:idUser', authMiddleware_1.authMiddleware, authMiddleware_1.onlyAdmin, authController_1.deleteUser); //Eliminar usuario
 // TAREAS
-//Nueva tarea
-router.post('/tasks', authMiddleware_1.authMiddleware, tareaController_1.crearTareaController);
+router.put('/projects/:projectId/tasks/:taskId', authMiddleware_1.authMiddleware, proyectoController_1.updateTask); //Nueva tarea
+router.delete('/projects/:projectId/tasks/:taskId', authMiddleware_1.authMiddleware, authMiddleware_1.onlyAdmin, proyectoController_1.deleteTask); // Eliminar una tarea de un proyecto
+router.post('/projects/:projectId/tasks', authMiddleware_1.authMiddleware, proyectoController_1.createTask); // Crear tareas
+router.get('/projects/:projectId/tasks', authMiddleware_1.authMiddleware, proyectoController_1.listTasks); // Listar tareas que pertenecen a un proyecto
 //PROYECTOS
-router.post('/projects', authMiddleware_1.authMiddleware, proyectoController_1.createProject);
-router.get('/projects', authMiddleware_1.authMiddleware, proyectoController_1.listProjects);
-router.post('/projects/:projectId/tasks', authMiddleware_1.authMiddleware, proyectoController_1.createTask);
-router.get('/projects/:projectId/tasks', authMiddleware_1.authMiddleware, proyectoController_1.listTasks);
-// Ruta protegida
-router.get('/protected', authMiddleware_1.authMiddleware, (req, res) => {
-    // Si llega aquí, significa que el token fue validado
-    const user = req.body.user; // Información del token decodificado
-    return res.status(200).json({
-        message: 'Estás autenticado y token valido',
-        user: user, // Aquí puedes devolver información adicional del usuario si lo deseas
-    });
-});
+router.post('/projects', authMiddleware_1.authMiddleware, proyectoController_1.createProject); // Crear proyecto
+router.get('/projects', authMiddleware_1.authMiddleware, proyectoController_1.listProjects); // Listar proyectos del usuairo autenticado
+router.put('/projects/:projectId', authMiddleware_1.authMiddleware, proyectoController_1.editProject); // Editar proyecto
+router.post('/projects/:projectId/users', authMiddleware_1.authMiddleware, proyectoController_1.addUserToProject); // Agregar usuario al proyecto
+router.delete('/projects/:projectId/users', authMiddleware_1.authMiddleware, proyectoController_1.removeUserFromProject); // Eliminar usuario del proyecto
+router.delete('/projects/:projectId', authMiddleware_1.authMiddleware, authMiddleware_1.onlyAdmin, proyectoController_1.deleteProject); // Eliminar un proyecto y todas sus tareas
 exports.default = router;
 //# sourceMappingURL=authRoutes.js.map

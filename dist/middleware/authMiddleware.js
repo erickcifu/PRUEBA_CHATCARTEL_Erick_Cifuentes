@@ -49,8 +49,8 @@ const authorizeUserOrAdmin = (req, res, next) => __awaiter(void 0, void 0, void 
         const userRepository = ormconfig_1.AppDataSource.getRepository(User_1.User);
         // Obtener al usuario autenticado con sus roles
         const user = yield userRepository.findOne({
-            where: { idUser: loggedInUser.userId },
-            relations: ['roles']
+            where: { idUser: loggedInUser.userId }, // Comparar correctamente el campo del token con la DB
+            relations: ['roles'] // Cargar los roles asociados al usuario
         });
         // Debug: Verificar qué usuario y roles se están obteniendo
         console.log("Usuario con roles desde DB:", user);
@@ -63,7 +63,7 @@ const authorizeUserOrAdmin = (req, res, next) => __awaiter(void 0, void 0, void 
         // Verificar si el usuario es el dueño de la información o si es administrador
         if (loggedInUser.userId === userIdFromParams || isAdmin) {
             console.log("Permiso concedido");
-            next();
+            next(); // El usuario tiene permiso para continuar
         }
         else {
             return res.status(403).json({ message: 'No tienes permisos para acceder a esta información' });
@@ -77,7 +77,7 @@ const authorizeUserOrAdmin = (req, res, next) => __awaiter(void 0, void 0, void 
 exports.authorizeUserOrAdmin = authorizeUserOrAdmin;
 //Autorización solo para admin
 const onlyAdmin = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    const loggedInUser = req.user;
+    const loggedInUser = req.user; // El usuario autenticado del JWT
     if (!loggedInUser) {
         return res.status(401).json({ message: 'Usuario no autenticado' });
     }
@@ -94,7 +94,7 @@ const onlyAdmin = (req, res, next) => __awaiter(void 0, void 0, void 0, function
         // Verificar si el usuario tiene el rol 'admin'
         const isAdmin = user.roles.some(rol => rol.nombre_Rol === 'admin');
         if (!isAdmin) {
-            return res.status(403).json({ message: 'No tienes permisos para eliminar usuarios' });
+            return res.status(403).json({ message: 'No tienes permisos para realizar esta accion' });
         }
         next(); // Si es admin, continuar con la siguiente función
     }
