@@ -6,7 +6,7 @@ Una API RESTful construida con Node.js, Express y TypeScript. Esta API está dis
 
 
 
-# API de Gestión de Usuarios para proyectos y tareas
+# API REST de Gestión de Usuarios para proyectos y tareas
 
 Esta API permite la gestión de usuarios, incluyendo el registro, inicio de sesión y la obtención de información de un usuario específico y la creacion de proyectos y asignacion de tareas a los usuarios. Está construida sobre Node.js y utiliza TypeScript y TypeORM.
 
