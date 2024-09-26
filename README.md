@@ -55,7 +55,8 @@ Código 500 - Error en el servidor: Error interno.
 Endpoint: http://localhost:3000/auth/login
 Método: POST
 Request
-|--------------------------------------------------------------------------------------|
+
+
 |Campo | 	Tipo   |	Descripción
 ---------------------------------------------------------------------------------------|
 |correo|	String |	Correo electrónico del usuario.                                    |
