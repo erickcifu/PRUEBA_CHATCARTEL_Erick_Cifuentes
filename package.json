@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-     "heroku-postbuild": "tsc",
-    "start": "tsc && node dist/app.js",
+    "heroku-postbuild": "tsc",
+    "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typeorm": "ts-node ./node_modules/typeorm/cli.js"
   },
@@ -34,6 +34,6 @@
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.20",
     "undici": "^6.19.8",
-    "typescript": "5.6.2"
+    "typescript": "5.6.2" 
   }
 }
