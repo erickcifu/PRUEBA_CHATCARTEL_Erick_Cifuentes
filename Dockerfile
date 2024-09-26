@@ -11,7 +11,7 @@ ENV NODE_ENV=production
 
 
 # 4. Instala las dependencias necesarias
-RUN npm install --production
+RUN npm install
 
 # Si estás en un entorno de desarrollo, puedes usar:
 # RUN npm install
