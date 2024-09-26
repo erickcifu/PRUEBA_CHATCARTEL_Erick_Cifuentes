@@ -117,7 +117,9 @@ Código 500 - Error en el servidor: Error interno.
   "error": "Error en el servidor."
 }
 ~~~~
-### Notas
+
+## Notas
+
 Asegúrate de que la API esté corriendo en http://localhost:3000 antes de realizar las peticiones.
 Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y seguir las mejores prácticas de seguridad.
 
