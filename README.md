@@ -56,12 +56,12 @@ Endpoint: http://localhost:3000/auth/login
 Método: POST
 Request
 
+| Campo       | Tipo   | Descripción                                                                                              |
+|-------------|--------|----------------------------------------------------------------------------------------------------------|
+| correo      | String | Correo electrónico del usuario. Debe ser único y tener un formato válido.                               |
+| pass        | String | Contraseña del usuario. Debe tener un mínimo de 6 caracteres y será encriptada al registrarse.           |
+----------------------------------------------------------------------------------------------------------------------------------
 
-|Campo | 	Tipo   |	Descripción
----------------------------------------------------------------------------------------|
-|correo|	String |	Correo electrónico del usuario.                                    |
-|pass  |	String |	Contraseña del usuario. Se comparará con la contraseña encriptada. |
-|--------------------------------------------------------------------------------------|
 Response
 Código 200 - OK: Inicio de sesión exitoso, devuelve el token JWT.
 ~~~~
