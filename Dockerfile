@@ -7,6 +7,9 @@ WORKDIR /app
 # 3. Copia los archivos package.json y package-lock.json a la imagen del contenedor
 COPY package*.json ./
 
+ENV NODE_ENV=production
+
+
 # 4. Instala las dependencias necesarias
 RUN npm install --production
 
