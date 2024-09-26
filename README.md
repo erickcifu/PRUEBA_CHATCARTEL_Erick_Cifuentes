@@ -127,8 +127,8 @@ Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y segu
 
 
 
-
-## https://pruebaerick-b12ed88da879.herokuapp.com//auth/login 
+##para poder acceder al servidor atraves del siguiente link:
+### https://pruebaerick-b12ed88da879.herokuapp.com
 
 
 
