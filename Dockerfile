@@ -5,7 +5,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 # 3. Copia los archivos package.json y package-lock.json a la imagen del contenedor
-COPY package.json package-lock.json app.ts ./
+COPY package.json package-lock.json 
 
 ENV NODE_ENV=production
 
