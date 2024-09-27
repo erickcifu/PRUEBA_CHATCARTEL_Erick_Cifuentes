@@ -129,15 +129,31 @@ Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y segu
 
 
 
-## Para poder acceder al servidor a través del siguiente enlace:
+## Para consumir desde el servidor a través endpoint:
 
-### https://pruebaerick-b12ed88da879.herokuapp.com
+### http://entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com
 
+## Listado de Endpoint:
 
+### Nota 
 
+<p>
+  1. Consultar el documento: DOCUMENTACION_CHATCARTEL_ERICK_CIFUENTES.pdf en el cual se encuentra la explicación de todos los endpoint construidos. 
+  2. Reemplazar la parte de localhost:3000 por: entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com
+</p>
+Por ejemplo:
+-  http://entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com/users
 
+##Conexión a las bases de datos 
+-  Mysql (Se recomienda utilizar la herramienta DBeaver)
+Host: proyectodb.chqqie6qssu0.us-east-2.rds.amazonaws.com
+Port: 3306
+User: root
+Password: Amazonbd24
+Database: ProyectoBD
 
-
+-  Mongo DB (se recomienda utilizar la herramienta MONGODB COMPASS)
+Hosts: mongodb+srv://erick:DataBase24@cluster0.dxpyr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 
 
