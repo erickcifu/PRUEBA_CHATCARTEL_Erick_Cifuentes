@@ -6,11 +6,11 @@ import { Tarea } from '../entities/Tarea';
 
 export const AppDataSource = new DataSource({
   type: 'mysql',
-  host: 'localhost',
+  host: 'proyectodb.chqqie6qssu0.us-east-2.rds.amazonaws.com',
   port: 3306,
   username: 'root',
-  password: '',  
-  database: 'ProyectoDB',
+  password: 'Amazonbd24.',  
+  database: 'ProyectoBD',
   synchronize: false,  // Para desarrollo, en producción debe ser false
   logging: true,
   entities: [User, Rol, Proyecto, Tarea],  // Importa las entidades

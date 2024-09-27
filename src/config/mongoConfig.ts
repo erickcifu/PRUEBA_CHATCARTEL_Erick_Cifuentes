@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const mongoURI = 'mongodb://127.0.0.1:27017/logs';
+const mongoURI = 'mongodb+srv://erick:DataBase24@cluster0.dxpyr.mongodb.net/logs?retryWrites=true&w=majority&appName=Cluster0';
 
 const connectMongo = async () => {
   try {
