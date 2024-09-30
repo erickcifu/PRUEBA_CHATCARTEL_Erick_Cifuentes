@@ -131,7 +131,7 @@ Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y segu
 
 ## Para consumir desde el servidor a través endpoint:
 
-### http://entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com
+### http://prtest.eba-5mfcnwmy.us-east-2.elasticbeanstalk.com
 
 ## Listado de Endpoint:
 
@@ -142,7 +142,7 @@ Todos los datos sensibles, como contraseñas, deben manejarse con cuidado y segu
   2. Reemplazar la parte de localhost:3000 por: entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com
 </p>
 Por ejemplo:
--  http://entprueba.eba-jb2wp2nx.us-east-1.elasticbeanstalk.com/users
+-  http://prtest.eba-5mfcnwmy.us-east-2.elasticbeanstalk.com/users
 
 ##Conexión a las bases de datos 
 -  Mysql (Se recomienda utilizar la herramienta DBeaver)
@@ -153,7 +153,9 @@ Password: Amazonbd24
 Database: ProyectoBD
 
 -  Mongo DB (se recomienda utilizar la herramienta MONGODB COMPASS)
-Hosts: prtest.eba-5mfcnwmy.us-east-2.elasticbeanstalk.com
+Hosts: mongodb+srv://erick:DataBase24@cluster0.dxpyr.mongodb.net/logs?retryWrites=true&w=majority&appName=Cluster0
+
+
 
 
 
