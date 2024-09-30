@@ -153,7 +153,7 @@ Password: Amazonbd24
 Database: ProyectoBD
 
 -  Mongo DB (se recomienda utilizar la herramienta MONGODB COMPASS)
-Hosts: mongodb+srv://erick:DataBase24@cluster0.dxpyr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+Hosts: prtest.eba-5mfcnwmy.us-east-2.elasticbeanstalk.com
 
 
 
